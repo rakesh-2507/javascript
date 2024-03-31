@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fixed deposit</title>
+</head>
+<style>
+ 
+.bank{
+border:10px solid #96EFFF;
+background: #96EFFF;
+height:fit-content;
+width: 800px;
+margin-left: 300px;
+margin-top: 10px;
+}
+input{
+margin-left: 500px;
+margin-top:0px;
+width: 250px;
+height: 50px;
+border-radius: 20px;
+padding: 1px;
+}
+
+.img{
+margin-top:-260px;
+margin-left: 10px;
+width:auto;
+box-shadow:10px 10px 10px 10px #31363F;
+}
+
+.abc{
+color:royalblue;
+margin-top:10px;
+font-size:x-large;
+margin-left: 50px;
+}
+
+.cal{
+    margin-left: 580px;
+margin-top:20px;
+width: 100px;
+height: 40px;
+border-radius: 20px;
+background-color: chartreuse;
+}
+h3{
+ margin-left: 530px;
+
+}
+</style>
+<body>
+    <div class="bank">
+    <h1 class="abc">Secure Your Future......<br> <br>Fixed Deposit Calculator......</h1>
+        <input type="name" placeholder="Enter username" id="username">
+        <br>
+        <input type="age" placeholder="Enter age" id="age">
+        <br>
+        <input type="amount" placeholder="Enter amount" id="amount">
+        <br>
+        <input type="tenure" placeholder="Enter tenure" id="tenure"><br>
+        <h3 id="res"></h3>
+        <button class="cal" type="submit" onclick="checkcal()">Calculator</button>
+    </div>
+    <div>   
+         <img src="http://media.istockphoto.com/vectors/bank-building-exterior-and-bank-interior-vector-id499597362?k=6&m=499597362&s=612x612&w=0&h=1ccUBO524UZzofY9fdX9rE1WUR9W9aEQpiDeDvp5VCk=" class="img" height="300" width="400">
+    </div>
+<script>
+
+function checkcal()
+{
+var uname,age,amount,tenure;
+uname=document.getElementById("username").value;
+age=document.getElementById("age").value;
+amount=document.getElementById("amount").value;
+tenure=document.getElementById("tenure").value;
+if(age>60)
+{
+    var interest=parseInt((amount*tenure*8)/100)
+    // document.write(uname+"Maturity amount is"+(interest+parseInt(amount)))
+    document.getElementById("res").innerHTML=uname + " Maturity amount is " + (interest+parseInt(amount))
+}
+else{
+    var interest=parseInt((amount*tenure*6/100))
+    gst=(0.5/100)*interest
+    interest=interest-gst
+    //document.write(uname+ "maturity amount is"(interest+parseInt(amount)))
+    document.getElementById("res").innerHTML=uname+" Maturity amount is "+(interest+parseInt(amount))
+
+}
+}
+</script>
+</body>
+</html>
